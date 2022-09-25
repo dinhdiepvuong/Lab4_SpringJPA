@@ -72,4 +72,36 @@ class Lab5SpringDataJpaApplicationTests {
 
     }
 
+    @Test
+    void NhanVienByMaMB747() {
+        System.out.println("10. Cho biết các nhân viên có thể lái máy bay có mã số 747: ");
+        nhanVienService.findNVByMaMB747();
+
+    }
+
+    @Test
+    void NhanVienHoNguyen() {
+        System.out.println("11. Cho biết mã số của các loại máy bay mà nhân viên có họ Nguyễn có thể lái: ");
+        nhanVienService.findNVHoNguyen();
+
+    }
+
+    @Test
+    void NhanVien12() {
+        System.out.println("12. Cho biết mã số của các phi công vừa lái được Boeing vừa lái được Airbus: ");
+        nhanVienService.findNV12();
+    }
+
+    @Test
+    void MayBay13(){
+        System.out.println("13. Cho biết các loại máy bay có thể thực hiện chuyến bay VN280");
+        mayBayService.findLoaiMB13();
+    }
+
+    @Test
+    void MayBay14(){
+        System.out.println("14. Cho biết các chuyến bay có thể ñược thực hiện bởi máy bay Airbus A320.");
+        mayBayService.findMB14();
+    }
+
 }

@@ -21,4 +21,12 @@ public class MayBayService {
 
     }
 
+    public void findLoaiMB13(){
+        mayBayRepo.findLoaiBM13().forEach(System.out::println);
+    }
+
+    public void findMB14(){
+        mayBayRepo.findMayBayBy14().forEach(System.out::println);
+    }
+
 }

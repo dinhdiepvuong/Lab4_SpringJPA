@@ -24,4 +24,27 @@ public interface NhanVienRepo extends JpaRepository<NhanVien, String> {
             "where m.Loai like '%Boeing%'\n" +
             "group by n.MaNV, n.Ten  ", nativeQuery = true)
     public List<NhanVien> findNhanVienByBoeing();
+
+//    10. Cho biết các nhân viên có thể lái máy bay có mã số 747
+    @Query(value = "select * from nhanvien n join chungnhan c on n.MaNV = c.MaNV\n" +
+            "where c.MaMB = '747'\n" +
+            "group by n.MaNV", nativeQuery = true)
+    public List<NhanVien> findNhanVienByMaMB747();
+
+//    11. Cho biết mã số của các loại máy bay mà nhân viên có họ Nguyễn có thể lái.
+    @Query(value = "select * from nhanvien n join chungnhan c on n.MaNV = c.MaNV\n" +
+            "where n.Ten like 'Nguyễn%'", nativeQuery = true)
+    public List<NhanVien> findNVHoNguyen();
+
+//    12. Cho biết mã số của các phi công vừa lái được Boeing vừa lái được Airbus
+    @Query(value = "select nhanvien.MaNV FROM nhanvien \n" +
+            "            WHERE nhanvien.MaNV IN \n" +
+            "            (SELECT DISTINCT MaNV FROM chungnhan WHERE MaMB IN \n" +
+            "            (SELECT MaMB FROM maybay WHERE Loai LIKE'%Airbus%'))\n" +
+            "            AND nhanvien.MaNV IN\n" +
+            "            (SELECT DISTINCT MaNV FROM chungnhan WHERE MaMB IN\n" +
+            "            (SELECT MaMB FROM maybay WHERE Loai LIKE'%Boeing%'))", nativeQuery = true)
+    public List<NhanVien> findNhanViensBy12();
+
+
 }

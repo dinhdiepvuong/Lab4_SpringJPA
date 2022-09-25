@@ -23,4 +23,16 @@ public class NhanVienService {
     public void findNhanVienByBoeing(){
         nhanVienRepo.findNhanVienByBoeing().forEach(System.out::println);
     }
+
+    public void findNVByMaMB747(){
+        nhanVienRepo.findNhanVienByMaMB747().forEach(System.out::println);
+    }
+
+    public void findNVHoNguyen(){
+        nhanVienRepo.findNVHoNguyen().forEach(System.out::println);
+    }
+
+    public void findNV12(){
+        nhanVienRepo.findNhanViensBy12();
+    }
 }
