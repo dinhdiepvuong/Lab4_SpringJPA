@@ -25,4 +25,11 @@ public interface ChuyenBayRepo extends JpaRepository<ChuyenBay, String> {
 //    6. Có bao nhiêu chuyến bay xuất phát từ Sài Gòn (SGN).
     @Query(value = "select count(MaCB) as Total from chuyenbay where GaDi = 'SGN' ", nativeQuery = true)
     public int countChuyenBayFroSGN();
+
+//    14. Cho biết các chuyến bay có thể ñược thực hiện bởi máy bay Airbus A320.
+    @Query(value = "select * from chuyenbay where DoDai >=\n" +
+            "(\n" +
+            "\tselect TamBay from maybay where Loai = 'Airbus A320'\n" +
+            ")", nativeQuery = true)
+    public List<ChuyenBay> findChuyenBayAirbusA320();
 }

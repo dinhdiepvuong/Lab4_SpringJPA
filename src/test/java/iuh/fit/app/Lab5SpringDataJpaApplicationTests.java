@@ -95,13 +95,22 @@ class Lab5SpringDataJpaApplicationTests {
     @Test
     void MayBay13(){
         System.out.println("13. Cho biết các loại máy bay có thể thực hiện chuyến bay VN280");
-        mayBayService.findLoaiMB13();
+        mayBayService.getMayBay().findMayBayByVN320().forEach(s ->{
+            System.out.println(s.getLoai());
+        });
     }
 
     @Test
     void MayBay14(){
         System.out.println("14. Cho biết các chuyến bay có thể ñược thực hiện bởi máy bay Airbus A320.");
-        mayBayService.findMB14();
+        chuyenBayService.getChuyenBay().findChuyenBayAirbusA320().forEach(System.out::println);
     }
+
+//    @Test
+//    void NhanVien15(){
+//        System.out.println("15. Cho biết tên của các phi công lái máy bay Boeing.");
+//        nhanVienService.getNhanVien().findNhanVienByBoeing15().forEach(
+//                n -> System.out.println(n.getTen()));
+//    }
 
 }

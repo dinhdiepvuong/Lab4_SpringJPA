@@ -13,7 +13,7 @@ public class ChuyenBayService {
     private ChuyenBayRepo chuyenBayRepo;
 
 //    Trả về 1 chuyến bay
-    public ChuyenBayRepo getChuyenBayRepo() {
+    public ChuyenBayRepo getChuyenBay() {
         return chuyenBayRepo;
     }
 
@@ -36,5 +36,9 @@ public class ChuyenBayService {
 
     public int CountChuyenBayFroSGN(){
         return chuyenBayRepo.countChuyenBayFroSGN();
+    }
+
+    public void ChuyenBayAirbusA320(){
+        chuyenBayRepo.findChuyenBayAirbusA320();
     }
 }

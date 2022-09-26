@@ -12,6 +12,10 @@ public class MayBayService {
     @Autowired
     private MayBayRepo mayBayRepo;
 
+    public MayBayRepo getMayBay(){
+        return mayBayRepo;
+    }
+
     public void TamBay10000(){
         mayBayRepo.findTamBayHon10000().forEach(System.out::println);
     }
@@ -22,11 +26,9 @@ public class MayBayService {
     }
 
     public void findLoaiMB13(){
-        mayBayRepo.findLoaiBM13().forEach(System.out::println);
+        mayBayRepo.findMayBayByVN320();
     }
 
-    public void findMB14(){
-        mayBayRepo.findMayBayBy14().forEach(System.out::println);
-    }
+
 
 }

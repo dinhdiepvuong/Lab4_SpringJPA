@@ -19,11 +19,11 @@ public class Lab5SpringDataJpaApplication {
         SpringApplication.run(Lab5SpringDataJpaApplication.class, args);
     }
 
-    @PostConstruct
-    int postConstruct(){
-
-        System.out.println("1.Các chuyến bay đi Đà Lạt: " + chuyenBayService.CountChuyenBayFroSGN());
-        return 0;
-    }
+//    @PostConstruct
+//    int postConstruct(){
+//
+//        System.out.println("1.Các chuyến bay đi Đà Lạt: " + chuyenBayService.CountChuyenBayFroSGN());
+//        return 0;
+//    }
 
 }

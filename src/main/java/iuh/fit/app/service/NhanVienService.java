@@ -12,6 +12,10 @@ public class NhanVienService {
     @Autowired
     private NhanVienRepo nhanVienRepo;
 
+    public NhanVienRepo getNhanVien(){
+        return nhanVienRepo;
+    }
+
     public void findLuongNho10000(){
         nhanVienRepo.findLuongNho10000().forEach(System.out::println);
     }
@@ -33,6 +37,7 @@ public class NhanVienService {
     }
 
     public void findNV12(){
-        nhanVienRepo.findNhanViensBy12();
+        nhanVienRepo.findNhanViensBy12().forEach(System.out::println);
     }
+
 }
